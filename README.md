@@ -11,7 +11,7 @@
 
 ## 项目概览
 
-HeliLab 是一个纯静态 SPA 作品集网站，用原生 HTML / CSS / JavaScript 构建，无任何框架依赖。展示了 9 个技术项目：小米 ROM 追踪站点、数据仓库、本地文件搜索工具、AI 工具、macOS 原生应用等。
+HeliLab 是一个纯静态 SPA 作品集网站，用原生 HTML / CSS / JavaScript 构建，无任何框架依赖。展示了 9 个核心项目：小米 ROM 追踪站点、数据仓库、本地文件搜索工具、AI 工具、macOS 原生应用等，另在[其他项目](#其他项目)中收录 MIUIROMS、MRCI 两个早期项目。
 
 整个网站仅由 **3 个核心文件** 构成（[index.html](index.html)、[main.js](main.js)、[style.css](style.css)），用 `hashchange` 做前端路由，配合滚动动画、页面过渡、响应式布局和无障碍设计。
 
@@ -29,21 +29,32 @@ HeliLab 是一个纯静态 SPA 作品集网站，用原生 HTML / CSS / JavaScri
 | 08 | **QuarantineRemover** | macOS 隔离属性移除工具，Liquid Glass 视觉效果 | Swift, SwiftUI, macOS | [GitHub](https://github.com/HegeKen/QuarantineRemover) |
 | 09 | **DocSniffer** | 基于 Tauri 2 + Rust + Tantivy 的本地文件全文搜索桌面应用 | Tauri 2, Rust, Tantivy, React 18, TypeScript | [GitHub](https://github.com/HegeKen/DocSniffer) |
 
+### 其他项目
+
+未在网站上展示的早期项目：
+
+| 项目 | 描述 | 技术栈 | 链接 |
+|------|------|--------|------|
+| **MIUIROMS** | MIUI 官方 ROM 仓库原版（2019–2024），NuxtMR 的前身，部署于 old.miuier.com | HTML, PHP | [GitHub](https://github.com/HegeKen/MIUIROMS) |
+| **MRCI** | 基于 CodeIgniter 4 的 PHP 后端项目，含多语言切换等模块 | PHP, CodeIgniter 4 | [GitHub](https://github.com/HegeKen/MRCI) |
+
 ## 项目数据
 
-以下为各子项目在 GitHub 上的社区数据（截至 2026 年 8 月）：
+以下为各项目在 GitHub 上的社区数据（截至 2026 年 09 月）：
 
 | 项目 | Stars | Forks | Commits | 语言 |
 |------|-------|-------|---------|------|
-| [HyperOS.fans](https://github.com/HegeKen/HyperOS.fans) | ![](https://img.shields.io/github/stars/HegeKen/HyperOS.fans?style=social) | ![](https://img.shields.io/github/forks/HegeKen/HyperOS.fans?style=social) | 373+ | Vue |
-| [HyperData](https://github.com/HegeKen/HyperData) | ![](https://img.shields.io/github/stars/HegeKen/HyperData?style=social) | ![](https://img.shields.io/github/forks/HegeKen/HyperData?style=social) | 180+ | Python |
-| [NuxtMR](https://github.com/HegeKen/NuxtMR) | ![](https://img.shields.io/github/stars/HegeKen/NuxtMR?style=social) | ![](https://img.shields.io/github/forks/HegeKen/NuxtMR?style=social) | 120+ | HTML |
-| [MRData](https://github.com/HegeKen/MRData) | ![](https://img.shields.io/github/stars/HegeKen/MRData?style=social) | ![](https://img.shields.io/github/forks/HegeKen/MRData?style=social) | 90+ | Python |
-| [hub.miuier.com](https://github.com/HegeKen/hub.miuier.com) | ![](https://img.shields.io/github/stars/HegeKen/hub.miuier.com?style=social) | ![](https://img.shields.io/github/forks/HegeKen/hub.miuier.com?style=social) | 27+ | Vue |
-| [miroms](https://github.com/HegeKen/miroms) | ![](https://img.shields.io/github/stars/HegeKen/miroms?style=social) | ![](https://img.shields.io/github/forks/HegeKen/miroms?style=social) | 40+ | Python |
-| [novel-proofreader](https://github.com/HegeKen/novel-proofreader) | ![](https://img.shields.io/github/stars/HegeKen/novel-proofreader?style=social) | ![](https://img.shields.io/github/forks/HegeKen/novel-proofreader?style=social) | 200+ | TypeScript |
-| [QuarantineRemover](https://github.com/HegeKen/QuarantineRemover) | ![](https://img.shields.io/github/stars/HegeKen/QuarantineRemover?style=social) | ![](https://img.shields.io/github/forks/HegeKen/QuarantineRemover?style=social) | 40+ | Swift |
-| [DocSniffer](https://github.com/HegeKen/DocSniffer) | ![](https://img.shields.io/github/stars/HegeKen/DocSniffer?style=social) | ![](https://img.shields.io/github/forks/HegeKen/DocSniffer?style=social) | 7+ | Rust |
+| [HyperOS.fans](https://github.com/HegeKen/HyperOS.fans) | ![](https://img.shields.io/github/stars/HegeKen/HyperOS.fans?style=social) | ![](https://img.shields.io/github/forks/HegeKen/HyperOS.fans?style=social) | 384+ | Vue |
+| [HyperData](https://github.com/HegeKen/HyperData) | ![](https://img.shields.io/github/stars/HegeKen/HyperData?style=social) | ![](https://img.shields.io/github/forks/HegeKen/HyperData?style=social) | 3249+ | Python |
+| [NuxtMR](https://github.com/HegeKen/NuxtMR) | ![](https://img.shields.io/github/stars/HegeKen/NuxtMR?style=social) | ![](https://img.shields.io/github/forks/HegeKen/NuxtMR?style=social) | 1179+ | Vue |
+| [MRData](https://github.com/HegeKen/MRData) | ![](https://img.shields.io/github/stars/HegeKen/MRData?style=social) | ![](https://img.shields.io/github/forks/HegeKen/MRData?style=social) | 1770+ | Python |
+| [hub.miuier.com](https://github.com/HegeKen/hub.miuier.com) | ![](https://img.shields.io/github/stars/HegeKen/hub.miuier.com?style=social) | ![](https://img.shields.io/github/forks/HegeKen/hub.miuier.com?style=social) | 30+ | Vue |
+| [miroms](https://github.com/HegeKen/miroms) | ![](https://img.shields.io/github/stars/HegeKen/miroms?style=social) | ![](https://img.shields.io/github/forks/HegeKen/miroms?style=social) | 52+ | Python |
+| [MIUIROMS](https://github.com/HegeKen/MIUIROMS) | ![](https://img.shields.io/github/stars/HegeKen/MIUIROMS?style=social) | ![](https://img.shields.io/github/forks/HegeKen/MIUIROMS?style=social) | 207+ | HTML |
+| [MRCI](https://github.com/HegeKen/MRCI) | ![](https://img.shields.io/github/stars/HegeKen/MRCI?style=social) | ![](https://img.shields.io/github/forks/HegeKen/MRCI?style=social) | 5+ | PHP |
+| [novel-proofreader](https://github.com/HegeKen/novel-proofreader) | ![](https://img.shields.io/github/stars/HegeKen/novel-proofreader?style=social) | ![](https://img.shields.io/github/forks/HegeKen/novel-proofreader?style=social) | 107+ | TypeScript |
+| [QuarantineRemover](https://github.com/HegeKen/QuarantineRemover) | ![](https://img.shields.io/github/stars/HegeKen/QuarantineRemover?style=social) | ![](https://img.shields.io/github/forks/HegeKen/QuarantineRemover?style=social) | 7+ | Swift |
+| [DocSniffer](https://github.com/HegeKen/DocSniffer) | ![](https://img.shields.io/github/stars/HegeKen/DocSniffer?style=social) | ![](https://img.shields.io/github/forks/HegeKen/DocSniffer?style=social) | 8+ | Rust |
 
 ### 相关项目
 
