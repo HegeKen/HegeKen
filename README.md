@@ -83,6 +83,7 @@ HeliLab/
 - **暗色主题** — 用 CSS 变量管理主题，暗色科技风
 - **三档响应式** — 桌面侧边栏 / 平板自适应 / 移动端底部 Tab
 - **滚动动画** — 用 `IntersectionObserver` 做元素渐入
+- **中英双语** — 内置 zh/en 词典，导航处一键切换，偏好存于 localStorage
 - **无障碍** — 支持 `prefers-reduced-motion`、ARIA 标签、语义化 HTML
 
 ### 字体

@@ -194,6 +194,236 @@ const projects = [
   }
 ];
 
+// --- i18n Dictionaries ---
+const I18N = {
+  zh: {
+    'lang.switch': 'EN',
+    'nav.home': '首页',
+    'nav.projects': '项目',
+    'nav.about': '关于',
+    'home.heroLabel': '独立开发 · 技术实验',
+    'home.heroDesc': '<strong>合理实验室</strong> — 一个独立开发者的技术探索空间。在这里，精密的代码与克制的设计相遇，每一个项目都是一次对「合理性」的追问。',
+    'home.ctaProjects': '查看项目',
+    'home.ctaAbout': '关于实验室',
+    'home.statProjects': '实验项目',
+    'home.statStack': '核心技术栈',
+    'home.featured': '精选项目',
+    'home.allProjects': '全部项目',
+    'projects.subtitle': '每一个项目都是一次实验。探索合理实验室的技术实践与成果。',
+    'detail.back': '返回项目列表',
+    'detail.viewLarge': '查看大图',
+    'detail.intro': '项目介绍',
+    'detail.highlights': '核心亮点',
+    'detail.tech': '技术栈',
+    'detail.breakthrough': '关键突破：',
+    'detail.visit': '访问线上版本',
+    'common.close': '关闭',
+    'about.subtitle': '合理实验室的由来、方向与联系。',
+    'about.intro': '<span class="highlight">HelilAb</span>，<span class="highlight">合理实验室</span>，是一个独立开发者的技术探索空间。「合理」二字取自对工程实践的信仰——每一行代码、每一个架构决策，都应经得起推敲，找到复杂度与简洁之间的合理平衡点。<br><br>这里没有炫技式的堆砌，只有对问题的认真分析和对解决方案的克制表达。从 ROM 分发平台到 AI 辅助工具，从 Web 全栈到 macOS 原生应用，每个项目都是一次对「合理性」的实验验证。',
+    'about.techTitle': '技术方向',
+    'about.tech1.title': 'Web 全栈',
+    'about.tech1.desc': 'Nuxt / Vue / TypeScript 生态，SSR/SSG 混合渲染，数据驱动架构',
+    'about.tech2.title': '桌面 & 移动',
+    'about.tech2.desc': 'Tauri (Rust + React) 跨平台应用，SwiftUI macOS 原生开发',
+    'about.tech3.title': 'AI 应用',
+    'about.tech3.desc': '大模型集成、碎片化长文本处理、TTS 流式播放、Prompt 工程',
+    'about.tech4.title': '数据工程',
+    'about.tech4.desc': 'Python 爬虫管道、API 逆向、自动化数据采集与分发',
+    'about.contactTitle': '联系方式',
+    'about.weibo': '微博',
+    'about.miCommunity': '小米社区',
+    'about.bilibili': 'B站',
+    'footer.lab': '合理实验室',
+    'footer.visitors': '访客',
+    'footer.pageviews': '访问'
+  },
+  en: {
+    'lang.switch': '中文',
+    'nav.home': 'Home',
+    'nav.projects': 'Projects',
+    'nav.about': 'About',
+    'home.heroLabel': 'Indie Dev · Tech Experiments',
+    'home.heroDesc': '<strong>HelilAb</strong> — a technical exploration space by an independent developer. Precise code meets restrained design; every project is an inquiry into what "reasonable" truly means.',
+    'home.ctaProjects': 'View Projects',
+    'home.ctaAbout': 'About the Lab',
+    'home.statProjects': 'Experiments',
+    'home.statStack': 'Core Stacks',
+    'home.featured': 'Featured',
+    'home.allProjects': 'All Projects',
+    'projects.subtitle': 'Every project is an experiment. Exploring the engineering practice and outcomes behind HelilAb.',
+    'detail.back': 'Back to Projects',
+    'detail.viewLarge': 'View full image',
+    'detail.intro': 'Overview',
+    'detail.highlights': 'Highlights',
+    'detail.tech': 'Tech Stack',
+    'detail.breakthrough': 'Key breakthrough: ',
+    'detail.visit': 'Visit Live Site',
+    'common.close': 'Close',
+    'about.subtitle': 'The origin, focus and contact of HelilAb.',
+    'about.intro': '<span class="highlight">HelilAb</span> is a technical exploration space by an independent developer. "Reasonable" reflects a belief in engineering — every line of code and every architectural decision should stand up to scrutiny, finding the right balance between complexity and simplicity.<br><br>No showy piling-up here — only careful analysis of problems and restrained expression of solutions. From ROM distribution platforms to AI-assisted tools, from full-stack web to native macOS apps, every project is an experiment in "reasonableness".',
+    'about.techTitle': 'Focus Areas',
+    'about.tech1.title': 'Web Full-stack',
+    'about.tech1.desc': 'Nuxt / Vue / TypeScript ecosystem, hybrid SSR/SSG rendering, data-driven architecture',
+    'about.tech2.title': 'Desktop & Mobile',
+    'about.tech2.desc': 'Cross-platform apps with Tauri (Rust + React), native macOS development with SwiftUI',
+    'about.tech3.title': 'AI Applications',
+    'about.tech3.desc': 'LLM integration, chunked long-text processing, streaming TTS, prompt engineering',
+    'about.tech4.title': 'Data Engineering',
+    'about.tech4.desc': 'Python crawler pipelines, API reverse engineering, automated data collection & distribution',
+    'about.contactTitle': 'Contact',
+    'about.weibo': 'Weibo',
+    'about.miCommunity': 'Mi Community',
+    'about.bilibili': 'Bilibili',
+    'footer.lab': 'Reasonable Lab',
+    'footer.visitors': 'Visitors',
+    'footer.pageviews': 'Page views'
+  }
+};
+
+// English copy for project data (tagline / description / features / highlights)
+const PROJECT_I18N = {
+  hyperos: {
+    tagline: 'An unofficial fan site for Xiaomi HyperOS, tracking ROM updates and device news.',
+    description: 'An information hub focused on the HyperOS ecosystem, built on a three-layer architecture: a Nuxt frontend for rendering and interaction, a Python data pipeline that collects data by reverse-engineering Xiaomi APIs, and a static JSON data layer served via an independent CDN. Covering 180+ Xiaomi/Redmi/POCO devices.',
+    features: [
+      'ROM update tracking across 10+ regions, stable and dev builds',
+      'Reverse-engineered Xiaomi OTA API encryption for automated data collection',
+      'Three-layer architecture: frontend, data pipeline and static data layer fully decoupled',
+      'Material Design UI built with Vuetify 4, dark theme',
+      'Full i18n support (160+ keys) with accessible design'
+    ],
+    highlights: 'Xiaomi API reverse engineering and a fully decoupled three-layer architecture'
+  },
+  hyperdata: {
+    tagline: 'The core data layer of HyperOS.fans — ROM version data for 180+ devices with an automated collection pipeline.',
+    description: 'The data engine behind HyperOS.fans. An independent Git repository hosted on Cloudflare Pages, storing all device JSON data and Python crawler scripts. Frontend and data are fully decoupled — data updates automatically trigger site redeployment without touching any frontend code.',
+    features: [
+      '180+ individual device JSON files covering the full Xiaomi / Redmi / POCO lineup',
+      '20+ region build tracking: China, Global, Europe, India, etc.',
+      'Python crawler pipeline: AES encrypted communication, database integration, Selenium automation',
+      'Cloudflare Pages auto-deployment with instant webhook-triggered updates',
+      'Full HyperOS version span: OS1.0 to OS4.0, Android 13-17'
+    ],
+    highlights: 'Independent data repository + automated collection & deployment pipeline'
+  },
+  nuxtmr: {
+    tagline: 'A MIUI official ROM download aggregator built on Nuxt 4, covering hundreds of devices.',
+    description: 'An unofficial MIUI/HyperOS ROM download aggregator. All site content is fully JSON-driven — one file per device, loaded on demand via dynamic routes. Data updates and code deployment are fully decoupled: refreshing the data submodule is all it takes to refresh the entire site.',
+    features: [
+      'Browse device ROMs by codename across stable, dev and more branches',
+      'Python crawler automation collecting ROM data from Xiaomi OTA servers',
+      'Solid accessibility: custom Vue directives syncing ARIA states',
+      'Distinct mobile and desktop layouts, fully responsive',
+      'Git submodule data separation — frontend and data managed independently'
+    ],
+    highlights: 'A data-driven static content architecture'
+  },
+  mrdata: {
+    tagline: 'The data foundation of NuxtMR — ROM data for 200+ devices, crawler scripts and CDN assets.',
+    description: 'The standalone data repository of the MIUI ROM site. Contains complete ROM data JSON for 200+ devices, a collection of Python crawler scripts, and frontend static assets. Distributed independently via the data.miuier.com CDN with Cloudflare Pages auto-deployment, achieving full separation of data and frontend code.',
+    features: [
+      '200+ device JSON data files, from the original Xiaomi 1 to the latest flagships',
+      '20+ Python crawler scripts: OTA, Fastboot and Recovery collection',
+      'AES-encrypted communication with Xiaomi OTA servers via reverse-engineered APIs',
+      'Cloudflare Pages hosting + webhook auto-deployment',
+      'Bilingual data (Chinese/English), covering MIUI 12 through HyperOS'
+    ],
+    highlights: 'Fully data/frontend-separated static content architecture'
+  },
+  hub: {
+    tagline: 'A ROM data platform for Xiaomi / Redmi / POCO devices, covering MIUI and HyperOS firmware lookup.',
+    description: 'A one-stop monorepo data platform for ROM enthusiasts. The frontend site is built on Nuxt 4 + Vue 3 with server-side rendering, offering device browsing, multi-dimensional filtering, full ROM branch tables per device and bilingual changelogs; the admin console, also Nuxt 4, connects directly to MySQL to manage devices, models, ROMs, branches and series. Data is auto-generated by the miroms submodule under data/, fully decoupled from the frontend.',
+    features: [
+      'Frontend site: device browsing with brand / Android / OS version filters',
+      'Full ROM table per device: stable, dev, carrier-customized and enterprise builds',
+      'Last-7-days update overview and bilingual changelogs',
+      'Admin console: direct MySQL management of devices / ROMs / branches / series with data validation',
+      'Monorepo structure — web + admin + data submodule, decoupled deployment'
+    ],
+    highlights: 'A monorepo architecture of frontend + admin + data submodule'
+  },
+  miroms: {
+    tagline: 'The data engine of MiROMs HUB — full ROM data for 326 devices with an automated collection pipeline.',
+    description: 'The data foundation of MiROMs HUB. All data is auto-generated from a MySQL database by a pure Python 3 pipeline; the core package fetches and decrypts Xiaomi update servers, covering both MIUI and HyperOS across stable, dev, carrier-customized and enterprise branches. Exports JSON APIs in V1 / V2 / V3 formats, auto-deployed via GitHub Pages on commit.',
+    features: [
+      '326 device JSON files; the V3 full format covers MIUI + HyperOS',
+      'Pure Python 3, zero third-party dependencies, modular core package',
+      'Xiaomi update server scraping with AES decryption, automatic data sync',
+      'V1 / V2 / V3 multi-version API with bilingual changelogs',
+      'GitHub Pages auto-deployment, consumed uniformly by frontend / admin / clients'
+    ],
+    highlights: 'V3 full data API and a zero-dependency collection pipeline'
+  },
+  novel: {
+    tagline: 'A Tauri 2 based AI novel proofreading app for desktop and mobile, designed for million-character web novels.',
+    description: 'An AI assistant built for web novels. The core challenge is processing multi-million-character texts — a chunked processing strategy overcomes LLM context limits by working paragraph by paragraph, chapter by chapter. Also integrates streaming TTS reading, character relationship graph visualization and AI role-play.',
+    features: [
+      'Chunked processing with semaphore queue control, breaking LLM context limits',
+      'Streaming TTS playback: play while generating, with a sensitive-word replacement layer',
+      'OpenAI-compatible API adapters: DeepSeek, Qwen, Ollama, etc.',
+      'Cross-platform UI: one React codebase for desktop three-pane and mobile tabs',
+      'Character relationship graph: interactive network visualization with node dragging and persisted positions'
+    ],
+    highlights: 'Million-character text processing and streaming TTS architecture'
+  },
+  quarantine: {
+    tagline: 'A native macOS tool that removes app quarantine attributes in one click, fixing "cannot verify developer" warnings.',
+    description: 'A refined macOS utility. It removes the quarantine flag via the system xattr command so apps downloaded outside the App Store run normally. The design highlight is a custom Liquid Glass visual — three layers of dynamic blur glow simulating translucent glass, with zero external dependencies, pure SwiftUI.',
+    features: [
+      'One-click removal of the com.apple.quarantine attribute',
+      'Auto-scans three system application directories with drag-and-drop support',
+      'Liquid Glass visuals: dynamic blur glow, glassmorphism cards',
+      'Full CI/CD: GitHub Actions builds and releases DMG automatically',
+      'Zero external dependencies, pure SwiftUI + AppKit native implementation'
+    ],
+    highlights: 'Liquid Glass visuals and a zero-dependency native implementation'
+  },
+  docsniffer: {
+    tagline: 'A cross-platform local file search and content retrieval desktop app built on Tauri 2 + Rust + Tantivy.',
+    description: 'A cross-platform (Windows / macOS / Linux) local full-text search tool. It scans local directories, builds Tantivy full-text indexes over files, supports filename / path / content search with advanced query syntax, plus rule-based (regex / keyword) matching detection. All data stays local. Beyond the GUI it offers a WebView-free server mode (docsniffer-server); after customizing a Win7 target with nightly + build-std, it becomes the officially supported path for Windows 7.',
+    features: [
+      'Directory scanning: recursive traversal + live progress, file watching with incremental re-indexing',
+      'Tantivy full-text index: BM25 relevance ranking, Chinese unigram tokenizer',
+      'Multi-format content extraction: Office (DOCX/XLSX/PPTX/WPS), PDF, encoding auto-detection',
+      'Advanced query syntax: path: / ext: / size: / mtime: / negation / OR / phrases',
+      'Server mode: single file without GUI dependencies, embedded web UI, Windows 7 support'
+    ],
+    highlights: 'Single-file portability + server mode compatible with Windows 7'
+  }
+};
+
+// --- Language State ---
+let lang = localStorage.getItem('helilab-lang') === 'en' ? 'en' : 'zh';
+
+function t(key) {
+  return I18N[lang][key] ?? I18N.zh[key] ?? key;
+}
+
+// Localized project field: English copy when available, otherwise the original
+function pt(project, field) {
+  if (lang === 'en' && PROJECT_I18N[project.id] && PROJECT_I18N[project.id][field] != null) {
+    return PROJECT_I18N[project.id][field];
+  }
+  return project[field];
+}
+
+function applyStaticI18n() {
+  document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+  document.title = lang === 'en' ? 'HelilAb — Reasonable Lab' : 'HelilAb | 合理实验室';
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const value = t(el.dataset.i18n);
+    if (value != null) el.textContent = value;
+  });
+}
+
+function setLang(next) {
+  if (next === lang) return;
+  lang = next;
+  localStorage.setItem('helilab-lang', lang);
+  applyStaticI18n();
+  navigate();
+}
+
 // --- DOM References ---
 const app = document.getElementById('app');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -280,31 +510,30 @@ function renderHome() {
     <div class="page home">
       <section class="hero">
         <div class="hero-left">
-          <div class="hero-label reveal">独立开发 · 技术实验</div>
+          <div class="hero-label reveal">${t('home.heroLabel')}</div>
           <h1 class="hero-title reveal reveal-delay-1">
             HELIL<span class="accent">AB</span>
           </h1>
           <p class="hero-desc reveal reveal-delay-2">
-            <strong>合理实验室</strong> — 一个独立开发者的技术探索空间。
-            在这里，精密的代码与克制的设计相遇，每一个项目都是一次对「合理性」的追问。
+            ${t('home.heroDesc')}
           </p>
           <div class="hero-cta reveal reveal-delay-3">
             <a href="#/projects" class="btn-primary">
-              查看项目
+              ${t('home.ctaProjects')}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="#/about" class="btn-ghost">关于实验室</a>
+            <a href="#/about" class="btn-ghost">${t('home.ctaAbout')}</a>
           </div>
         </div>
         <div class="hero-right reveal reveal-delay-2">
           <div class="hero-grid-bg" aria-hidden="true"></div>
           <div class="hero-stat">
             <span class="hero-stat-num">${projects.length}</span>
-            <span class="hero-stat-label">实验项目</span>
+            <span class="hero-stat-label">${t('home.statProjects')}</span>
           </div>
           <div class="hero-stat">
             <span class="hero-stat-num">6</span>
-            <span class="hero-stat-label">核心技术栈</span>
+            <span class="hero-stat-label">${t('home.statStack')}</span>
           </div>
           <div class="hero-coords">
             <span>STATUS</span> &nbsp; ACTIVE<br>
@@ -316,9 +545,9 @@ function renderHome() {
 
       <section class="featured">
         <div class="section-header reveal">
-          <span class="section-label">精选项目</span>
+          <span class="section-label">${t('home.featured')}</span>
           <a href="#/projects" class="section-link">
-            全部项目
+            ${t('home.allProjects')}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -337,7 +566,7 @@ function renderProjects() {
     <div class="page projects-page">
       <div class="page-header reveal">
         <h1 class="page-title">Projects</h1>
-        <p class="page-subtitle">每一个项目都是一次实验。探索合理实验室的技术实践与成果。</p>
+        <p class="page-subtitle">${t('projects.subtitle')}</p>
       </div>
       <div class="projects-list-grid">
         ${projects.map((p, i) => renderProjectCard(p, i)).join('')}
@@ -371,18 +600,18 @@ function renderDetail(id) {
     <div class="page detail-page">
       <a href="#/projects" class="detail-back reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        返回项目列表
+        ${t('detail.back')}
       </a>
 
       <div class="detail-header">
         <div class="detail-num reveal">${project.num}</div>
         <h1 class="detail-title reveal reveal-delay-1">${project.name}</h1>
-        <p class="detail-tagline reveal reveal-delay-2">${project.tagline}</p>
+        <p class="detail-tagline reveal reveal-delay-2">${pt(project, 'tagline')}</p>
       </div>
 
       <div class="detail-visual reveal">
         ${project.image
-          ? `<div class="detail-visual-placeholder detail-visual-zoom" data-lightbox="${project.image}" role="button" tabindex="0" aria-label="查看大图">
+          ? `<div class="detail-visual-placeholder detail-visual-zoom" data-lightbox="${project.image}" role="button" tabindex="0" aria-label="${t('detail.viewLarge')}">
               <img src="${displayImage(project)}" alt="${project.name}" ${imgFallback(project)}>
             </div>`
           : `<div class="detail-visual-placeholder" style="background: ${gradients[project.id]}"><span class="detail-visual-label">DEMO / SCREENSHOT</span></div>`
@@ -391,26 +620,26 @@ function renderDetail(id) {
 
       <div class="detail-grid">
         <div class="reveal">
-          <h3 class="detail-section-title">项目介绍</h3>
+          <h3 class="detail-section-title">${t('detail.intro')}</h3>
           <div class="detail-text">
-            <p>${project.description}</p>
+            <p>${pt(project, 'description')}</p>
           </div>
         </div>
         <div class="reveal reveal-delay-1">
-          <h3 class="detail-section-title">核心亮点</h3>
+          <h3 class="detail-section-title">${t('detail.highlights')}</h3>
           <ul class="detail-list">
-            ${project.features.map(f => `<li>${f}</li>`).join('')}
+            ${pt(project, 'features').map(f => `<li>${f}</li>`).join('')}
           </ul>
         </div>
       </div>
 
       <div class="reveal">
-        <h3 class="detail-section-title">技术栈</h3>
+        <h3 class="detail-section-title">${t('detail.tech')}</h3>
         <div class="detail-meta" style="margin-top: 0;">
-          ${project.tech.map(t => `<span class="detail-tag">${t}</span>`).join('')}
+          ${project.tech.map(tag => `<span class="detail-tag">${tag}</span>`).join('')}
         </div>
         <div class="detail-text" style="margin-top: 16px;">
-          <p><strong style="color: var(--accent);">关键突破：</strong>${project.highlights}</p>
+          <p><strong style="color: var(--accent);">${t('detail.breakthrough')}</strong>${pt(project, 'highlights')}</p>
         </div>
       </div>
 
@@ -418,7 +647,7 @@ function renderDetail(id) {
         <div class="detail-links reveal">
           ${project.url ? `
             <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="btn-primary">
-              访问线上版本
+              ${t('detail.visit')}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
           ` : ''}
@@ -441,41 +670,35 @@ function renderAbout() {
     <div class="page about-page">
       <div class="page-header reveal">
         <h1 class="page-title">About</h1>
-        <p class="page-subtitle">合理实验室的由来、方向与联系。</p>
+        <p class="page-subtitle">${t('about.subtitle')}</p>
       </div>
 
       <div class="about-grid">
         <div class="reveal">
           <p class="about-intro">
-            <span class="highlight">Helilab</span>，<span class="highlight">合理实验室</span>，
-            是一个独立开发者的技术探索空间。「合理」二字取自对工程实践的信仰——
-            每一行代码、每一个架构决策，都应经得起推敲，找到复杂度与简洁之间的合理平衡点。
-            <br><br>
-            这里没有炫技式的堆砌，只有对问题的认真分析和对解决方案的克制表达。
-            从 ROM 分发平台到 AI 辅助工具，从 Web 全栈到 macOS 原生应用，
-            每个项目都是一次对「合理性」的实验验证。
+            ${t('about.intro')}
           </p>
         </div>
 
         <div class="reveal reveal-delay-1">
           <div class="about-section">
-            <h3 class="about-section-title">技术方向</h3>
+            <h3 class="about-section-title">${t('about.techTitle')}</h3>
             <div class="about-tech-grid">
               <div class="about-tech-card">
-                <h4>Web 全栈</h4>
-                <p>Nuxt / Vue / TypeScript 生态，SSR/SSG 混合渲染，数据驱动架构</p>
+                <h4>${t('about.tech1.title')}</h4>
+                <p>${t('about.tech1.desc')}</p>
               </div>
               <div class="about-tech-card">
-                <h4>桌面 & 移动</h4>
-                <p>Tauri (Rust + React) 跨平台应用，SwiftUI macOS 原生开发</p>
+                <h4>${t('about.tech2.title')}</h4>
+                <p>${t('about.tech2.desc')}</p>
               </div>
               <div class="about-tech-card">
-                <h4>AI 应用</h4>
-                <p>大模型集成、碎片化长文本处理、TTS 流式播放、Prompt 工程</p>
+                <h4>${t('about.tech3.title')}</h4>
+                <p>${t('about.tech3.desc')}</p>
               </div>
               <div class="about-tech-card">
-                <h4>数据工程</h4>
-                <p>Python 爬虫管道、API 逆向、自动化数据采集与分发</p>
+                <h4>${t('about.tech4.title')}</h4>
+                <p>${t('about.tech4.desc')}</p>
               </div>
             </div>
           </div>
@@ -483,7 +706,7 @@ function renderAbout() {
       </div>
 
       <div class="about-contact reveal">
-        <h3 class="about-section-title">联系方式</h3>
+        <h3 class="about-section-title">${t('about.contactTitle')}</h3>
         <div class="contact-links">
           <a href="mailto:hegeken@foxmail.com" class="contact-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -502,17 +725,17 @@ function renderAbout() {
           </a>
           <a href="https://weibo.com/Heliljan" target="_blank" rel="noopener noreferrer" class="contact-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 118 0c0 2-1.5 3-3 4"/><circle cx="17" cy="7" r="1.5" fill="currentColor"/></svg>
-            <span class="label">微博</span>
+            <span class="label">${t('about.weibo')}</span>
             <span>weibo.com/Heliljan</span>
           </a>
           <a href="https://web.vip.miui.com/page/info/mio/mio/homePage?uid=311975809" target="_blank" rel="noopener noreferrer" class="contact-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
-            <span class="label">小米社区</span>
-            <span>小米社区</span>
+            <span class="label">${t('about.miCommunity')}</span>
+            <span>${t('about.miCommunity')}</span>
           </a>
           <a href="https://space.bilibili.com/19940729" target="_blank" rel="noopener noreferrer" class="contact-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M10 9l4 0"/><path d="M7 4l2 4"/><path d="M17 4l-2 4"/><path d="M8 18l1-3"/><path d="M16 18l-1-3"/></svg>
-            <span class="label">B站</span>
+            <span class="label">${t('about.bilibili')}</span>
             <span>bilibili.com/19940729</span>
           </a>
           <a href="https://www.helilab.cn" target="_blank" rel="noopener noreferrer" class="contact-link">
@@ -546,9 +769,9 @@ function renderProjectCard(project, index) {
         </svg>
       </div>
       <h3 class="card-title">${project.name}</h3>
-      <p class="card-desc">${project.tagline}</p>
+      <p class="card-desc">${pt(project, 'tagline')}</p>
       <div class="card-tags">
-        ${project.tech.slice(0, 4).map(t => `<span class="card-tag">${t}</span>`).join('')}
+        ${project.tech.slice(0, 4).map(tag => `<span class="card-tag">${tag}</span>`).join('')}
       </div>
       ${imageHtml}
     </a>
@@ -559,10 +782,10 @@ function renderProjectCard(project, index) {
 function footerHtml(marginTop) {
   return `
     <footer class="site-footer"${marginTop ? ` style="margin-top: ${marginTop}px;"` : ''}>
-      <span class="footer-text">&copy; 2026 <span class="accent">Helilab</span> 合理实验室</span>
+      <span class="footer-text">&copy; 2026 <span class="accent">HelilAb</span> ${t('footer.lab')}</span>
       <span class="footer-text footer-visit">
-        访客 <span id="busuanzi_value_site_uv" data-visit="site_uv">—</span>
-        · 访问 <span id="busuanzi_value_site_pv" data-visit="site_pv">—</span>
+        ${t('footer.visitors')} <span id="busuanzi_value_site_uv" data-visit="site_uv">—</span>
+        · ${t('footer.pageviews')} <span id="busuanzi_value_site_pv" data-visit="site_pv">—</span>
       </span>
       <span class="footer-text">Built with precision & restraint</span>
     </footer>
@@ -605,10 +828,10 @@ function openLightbox(src, alt) {
   overlay.className = 'lightbox';
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', alt || '查看大图');
+  overlay.setAttribute('aria-label', alt || t('detail.viewLarge'));
   overlay.innerHTML = `
     <div class="lightbox-backdrop" data-lightbox-close></div>
-    <button class="lightbox-close" data-lightbox-close aria-label="关闭">
+    <button class="lightbox-close" data-lightbox-close aria-label="${t('common.close')}">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <figure class="lightbox-figure">
@@ -685,6 +908,12 @@ window.addEventListener('DOMContentLoaded', () => {
   navigate();
   initVisits();
 });
+
+// --- Language Switch Binding ---
+document.querySelectorAll('[data-lang-switch]').forEach(btn => {
+  btn.addEventListener('click', () => setLang(lang === 'zh' ? 'en' : 'zh'));
+});
+applyStaticI18n();
 
 // Re-render when crossing the mobile breakpoint so the correct (mobile/original) image is used
 mqMobile.addEventListener('change', (e) => {

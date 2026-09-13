@@ -176,7 +176,10 @@ img {
   border-top: 1px solid var(--border);
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .nav-github {
@@ -195,6 +198,51 @@ img {
   font-size: 9px;
   color: var(--text-muted);
   font-family: var(--font-mono);
+}
+
+/* --- Language Toggle --- */
+.lang-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.lang-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.nav-mobile-lang {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 16px;
+  background: none;
+  border: none;
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: color 0.25s var(--ease-out);
+}
+.nav-mobile-lang svg {
+  width: 20px;
+  height: 20px;
+}
+.nav-mobile-lang span {
+  font-size: 10px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+.nav-mobile-lang:hover {
+  color: var(--accent);
 }
 
 /* --- Mobile Navigation --- */
@@ -1417,6 +1465,10 @@ img {
 
   .nav-mobile {
     display: flex;
+    /* Opaque background: blur is invisible but breaks iOS fixed-bottom
+       viewport anchoring (bar sinks below the URL bar until scroll) */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .main {
@@ -1448,10 +1500,18 @@ img {
     padding: 24px;
   }
 
-  .card-image-placeholder {
+  .hero {
+    overflow: hidden;
+  }
+
+  /* aspect-ratio derives WIDTH from a forced height: desktop's fixed
+     360px height (higher specificity) or min-height would make the box
+     360*1.5=540px wide and overflow the card/viewport */
+  .card-image-placeholder,
+  .featured-grid .project-card:first-child .card-image-placeholder {
     display: block;
     height: auto;
-    min-height: 240px;
+    min-height: 0;
     aspect-ratio: 3 / 2;
     border-radius: var(--radius);
     overflow: hidden;
@@ -1514,6 +1574,91 @@ img {
 }
 
 /* ============================================
+   RESPONSIVE — Widescreen (2K / 4K)
+   Default containers cap at 1600px and hug the left sidebar, which
+   leaves a huge void on the right on large displays. Widen the cap,
+   add a third column to card grids, and give two-column pages more air.
+   ============================================ */
+
+@media (min-width: 1800px) {
+  .home,
+  .projects-page,
+  .detail-page,
+  .about-page {
+    max-width: 2000px;
+    padding: 72px 72px 96px;
+  }
+
+  /* Home: 3 featured cards in one even row instead of 1 tall + 2 stacked */
+  .featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .featured-grid .project-card:first-child {
+    grid-row: span 1;
+  }
+
+  .featured-grid .card-image-placeholder,
+  .featured-grid .project-card:first-child .card-image-placeholder {
+    height: 260px;
+  }
+
+  /* Projects list: 9 projects = 3 × 3 */
+  .projects-grid,
+  .projects-list-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .projects-list-grid .card-image-placeholder {
+    height: 220px;
+  }
+
+  .hero {
+    gap: 80px;
+  }
+
+  .hero-title {
+    font-size: clamp(88px, 5.5vw, 120px);
+  }
+
+  .hero-desc {
+    max-width: 560px;
+    font-size: 17px;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 72px;
+  }
+
+  .detail-tagline {
+    max-width: 720px;
+  }
+
+  .about-grid {
+    gap: 96px;
+  }
+
+  .about-intro {
+    font-size: 19px;
+  }
+}
+
+/* 4K at 100% scaling: stop stretching, center the column instead */
+@media (min-width: 2400px) {
+  .home,
+  .projects-page,
+  .detail-page,
+  .about-page {
+    max-width: 2400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ============================================
    ANIMATIONS
    ============================================ */
 
@@ -1527,8 +1672,13 @@ img {
   50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.1); }
 }
 
-.hero-grid-bg {
-  animation: float 8s ease-in-out infinite;
+/* Float only on desktop: the infinite animation forces continuous
+   re-compositing on mobile and makes the fixed bottom nav sink while
+   scrolling (iOS Safari + backdrop-filter quirk) */
+@media (min-width: 769px) {
+  .hero-grid-bg {
+    animation: float 8s ease-in-out infinite;
+  }
 }
 
 /* Reduced Motion */
